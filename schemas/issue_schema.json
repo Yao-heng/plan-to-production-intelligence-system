@@ -1,0 +1,156 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"title": "Issue Schema",
+"description": "Structured validation, pilot, production, or sustaining issue used for triage, ownership routing, recovery planning, and readiness assessment.",
+"type": "object",
+"required": [
+"issue_id",
+"title",
+"milestone",
+"severity",
+"is_gating",
+"reported_by",
+"suspected_owner",
+"current_status"
+],
+"properties": {
+"issue_id": {
+"type": "string",
+"description": "Unique issue identifier, such as ISSUE-001."
+},
+"title": {
+"type": "string",
+"description": "Short issue title."
+},
+"description": {
+"type": "string",
+"description": "Detailed issue description."
+},
+"milestone": {
+"type": "string",
+"description": "Milestone where the issue was discovered or where it has impact.",
+"enum": [
+"Feature Complete",
+"DVT",
+"Pilot",
+"Pilot Exit",
+"Production Readiness",
+"RFD",
+"RTS",
+"Sustaining Handoff"
+]
+},
+"severity": {
+"type": "string",
+"description": "Issue severity.",
+"enum": [
+"Sev1",
+"Sev2",
+"Sev3",
+"Sev4"
+]
+},
+"is_gating": {
+"type": "boolean",
+"description": "Whether the issue blocks milestone exit, production readiness, RFD, RTS, or customer qualification."
+},
+"reported_by": {
+"type": "string",
+"description": "Team or function that reported the issue."
+},
+"suspected_owner": {
+"type": "string",
+"description": "Suggested primary owner team."
+},
+"confirmed_owner": {
+"type": "string",
+"description": "Confirmed owner team after triage."
+},
+"impacted_teams": {
+"type": "array",
+"description": "Teams impacted by this issue.",
+"items": {
+"type": "string"
+}
+},
+"related_requirements": {
+"type": "array",
+"description": "Requirement IDs related to this issue.",
+"items": {
+"type": "string"
+}
+},
+"reproducible": {
+"type": "boolean",
+"description": "Whether the issue can be reproduced."
+},
+"machine_available": {
+"type": "boolean",
+"description": "Whether the debug owner has access to the required machine or test environment."
+},
+"current_status": {
+"type": "string",
+"description": "Current issue status.",
+"enum": [
+"Open",
+"Needs Reproduction",
+"Under Debug",
+"Fix In Progress",
+"Fixed",
+"QT Verify",
+"Verified",
+"Closed",
+"Deferred",
+"ATS Candidate",
+"Post-RTS Candidate",
+"Escalation Required"
+]
+},
+"customer_impact": {
+"type": "string",
+"description": "Customer or business impact."
+},
+"quality_impact": {
+"type": "string",
+"description": "Product quality impact."
+},
+"schedule_impact": {
+"type": "string",
+"description": "Schedule impact, including milestone risk."
+},
+"recovery_plan": {
+"type": "string",
+"description": "Planned recovery action."
+},
+"fix_eta": {
+"type": "string",
+"description": "Estimated fix date or timing."
+},
+"qt_verification_status": {
+"type": "string",
+"description": "QT verification status.",
+"enum": [
+"Not Started",
+"In Progress",
+"Pass",
+"Fail",
+"Blocked",
+"Not Required"
+]
+},
+"recommended_action": {
+"type": "string",
+"description": "AI or human recommended next action."
+},
+"escalation_required": {
+"type": "boolean",
+"description": "Whether escalation is required."
+},
+"confidence_score": {
+"type": "number",
+"description": "AI confidence score for severity classification, owner routing, or recovery recommendation.",
+"minimum": 0,
+"maximum": 1
+}
+}
+}
