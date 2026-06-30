@@ -1,0 +1,146 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"title": "Requirement Schema",
+"description": "Structured requirement extracted from RFQ, product specification, architecture document, feature matrix, firmware specification, validation plan, or customer requirement.",
+"type": "object",
+"required": [
+"requirement_id",
+"title",
+"description",
+"source_document",
+"owner_team",
+"milestone",
+"acceptance_criteria",
+"status"
+],
+"properties": {
+"requirement_id": {
+"type": "string",
+"description": "Unique requirement identifier, such as BIOS-REQ-001."
+},
+"title": {
+"type": "string",
+"description": "Short requirement title."
+},
+"description": {
+"type": "string",
+"description": "Detailed requirement description."
+},
+"source_document": {
+"type": "string",
+"description": "Original source document, such as RFQ, ARD, FM, CSTL, BIOS Spec, NUDD, UX Spec, validation plan, or customer requirement."
+},
+"source_section": {
+"type": "string",
+"description": "Section or paragraph in the source document."
+},
+"function_area": {
+"type": "string",
+"description": "Functional domain for the requirement.",
+"enum": [
+"BIOS",
+"BMC",
+"EC",
+"MCU",
+"ME Firmware",
+"Driver",
+"OS",
+"Application",
+"System Image",
+"Validation",
+"Diagnostics",
+"Factory",
+"Quality",
+"Thermal",
+"Graphics",
+"Security",
+"Manufacturing",
+"Services",
+"Program"
+]
+},
+"owner_team": {
+"type": "string",
+"description": "Primary owner team responsible for execution."
+},
+"impacted_teams": {
+"type": "array",
+"description": "Teams affected by this requirement.",
+"items": {
+"type": "string"
+}
+},
+"upstream_dependencies": {
+"type": "array",
+"description": "Inputs required from upstream teams before implementation can complete.",
+"items": {
+"type": "string"
+}
+},
+"downstream_dependencies": {
+"type": "array",
+"description": "Teams or deliverables impacted by this requirement.",
+"items": {
+"type": "string"
+}
+},
+"milestone": {
+"type": "string",
+"description": "Target milestone for readiness.",
+"enum": [
+"Plan Complete",
+"Requirement Complete",
+"Feature Complete",
+"DVT Hardware Ready",
+"Pilot",
+"Pilot Exit",
+"Production Readiness",
+"RFD",
+"RTS",
+"Sustaining Handoff"
+]
+},
+"acceptance_criteria": {
+"type": "string",
+"description": "How the requirement will be verified or accepted."
+},
+"status": {
+"type": "string",
+"description": "Current execution status.",
+"enum": [
+"Not Started",
+"In Progress",
+"Implemented",
+"Testable",
+"Blocked",
+"Verified",
+"Deferred",
+"Closed"
+]
+},
+"priority": {
+"type": "string",
+"description": "Requirement priority.",
+"enum": [
+"Critical",
+"High",
+"Medium",
+"Low"
+]
+},
+"risk_if_late": {
+"type": "string",
+"description": "Potential impact if this requirement is late or incomplete."
+},
+"human_review_required": {
+"type": "boolean",
+"description": "Whether human review is required before using this requirement in execution tracking."
+},
+"confidence_score": {
+"type": "number",
+"description": "AI confidence score for extraction or owner routing.",
+"minimum": 0,
+"maximum": 1
+}
+}
+}
