@@ -1,0 +1,5 @@
+pydantic
+networkx
+pytest
+python-dotenv
+markdown
