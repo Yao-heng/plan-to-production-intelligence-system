@@ -6,7 +6,7 @@ AI-driven Plan-to-Production governance system for requirement decomposition, ow
 This project is documented as both a formal concept paper and a pitch deck.
 
 * [Download Concept Document](docs/Plan_to_Production_Intelligence_System_Concept_v2.docx)
-* [Download Pitch Deck](assets/Plan_to_Production_Intelligence_System_Pitch_v2.pptx)
+* [Download Pitch Deck](docs/Plan_to_Production_Intelligence_System_Pitch_v2.pptx)
 
 The concept document explains the full Plan-to-Production Intelligence System, including enterprise pain points, AI-driven process transformation, agentic loop design, requirement decomposition, ownership routing, dependency intelligence, validation issue convergence, production readiness, and sustaining handoff.
 
