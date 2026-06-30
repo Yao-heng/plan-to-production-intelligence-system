@@ -95,6 +95,34 @@ After running the MVP, the system generates output artifacts under the `outputs/
 * `outputs/issue_triage_report.md`
 * `outputs/fc_readiness_report.json`
 * `outputs/executive_summary.md`
+* 
+### Demo Output
+
+The following generated outputs demonstrate the MVP workflow results:
+
+* [Executive Summary](outputs/executive_summary.md)
+  Shows the overall Feature Complete readiness status, major risks, gating issues, owner risks, and recommended next actions.
+
+* [Feature Checklist](outputs/feature_checklist.md)
+  Shows how fragmented RFQ requirements are converted into function-level execution checklists across BIOS, BMC, EC, Driver / OS, Validation, Factory, and Program teams.
+
+* [Issue Triage Report](outputs/issue_triage_report.md)
+  Shows how validation issues are grouped by severity, gating status, owner, milestone impact, reproducibility, and machine availability.
+
+* [Dependency Graph](outputs/dependency_graph.md)
+  Shows cross-functional upstream and downstream dependencies that may impact Feature Complete, Pilot, Production Readiness, RFD, RTS, or Sustaining Handoff.
+
+* [Readiness Report JSON](outputs/fc_readiness_report.json)
+  Provides structured readiness data that can be consumed by dashboards, APIs, or future AI agents.
+
+### Why These Outputs Matter
+
+These outputs demonstrate how the system converts scattered project data into decision-ready delivery intelligence.
+
+Instead of relying on repeated status meetings, manual spreadsheet tracking, and fragmented ownership discussions, the MVP shows how AI-assisted governance can generate structured checklists, owner visibility, dependency intelligence, issue triage, readiness scoring, and executive summaries.
+
+This is the foundation for reducing meeting time, lowering human coordination load, improving product quality, controlling schedule risk, and improving production readiness.
+
 
 ### What This Demonstrates
 
