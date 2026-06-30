@@ -59,21 +59,47 @@ The system productizes senior SWDM / STM / LD execution logic into an AI-assiste
 
 ## MVP Prototype
 
-The first local Python MVP is implemented with deterministic logic and sample data. It does not call external APIs, does not call OpenAI APIs, and does not require API keys.
+This repository now includes a local MVP prototype that demonstrates the core Plan-to-Production Intelligence System workflow.
 
-Run locally:
+The MVP uses fictional sample data to simulate an AI server platform program and demonstrates how fragmented RFQ requirements, validation issues, ownership signals, dependencies, and milestone risks can be transformed into structured delivery intelligence.
 
-```powershell
+### MVP Workflow
+
+The current prototype performs the following steps:
+
+1. Loads a fictional RFQ package from `sample_data/sample_rfq_package.md`
+2. Extracts structured platform requirements
+3. Routes requirements to functional owner teams
+4. Detects cross-team dependencies
+5. Generates function-level feature checklists
+6. Loads sample validation issues from `sample_data/sample_issues.json`
+7. Performs issue triage by severity, owner, milestone, and gating status
+8. Generates Feature Complete readiness assessment
+9. Produces executive-level summary reports
+
+### How to Run
+
+```bash
 pip install -r requirements.txt
 python app/main.py
 pytest
 ```
 
-Generated artifacts are written to `outputs/`:
+### Generated Outputs
 
-- `feature_checklist.md`
-- `dependency_graph.json`
-- `dependency_graph.md`
-- `issue_triage_report.md`
-- `fc_readiness_report.json`
-- `executive_summary.md`
+After running the MVP, the system generates output artifacts under the `outputs/` folder:
+
+* `outputs/feature_checklist.md`
+* `outputs/dependency_graph.json`
+* `outputs/dependency_graph.md`
+* `outputs/issue_triage_report.md`
+* `outputs/fc_readiness_report.json`
+* `outputs/executive_summary.md`
+
+### What This Demonstrates
+
+This MVP demonstrates the first step toward an AI-driven Plan-to-Production governance system.
+
+It shows how enterprises can reduce manual coordination effort, meeting preparation time, ownership ambiguity, issue tracking overhead, and release readiness uncertainty by converting fragmented project information into structured, decision-ready intelligence.
+
+The current implementation is deterministic and does not require external APIs or API keys. Future versions can extend this foundation with LLM-based extraction, RAG, Jira integration, PLM integration, validation log ingestion, CI/CD data, and production readiness dashboards.
