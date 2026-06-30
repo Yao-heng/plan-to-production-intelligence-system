@@ -1,0 +1,194 @@
+[
+  {
+    "source": "External:Customer security profile",
+    "target": "BIOS-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "BIOS-REQ-001 lists upstream dependency Customer security profile."
+  },
+  {
+    "source": "External:TPM module AVL",
+    "target": "BIOS-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "BIOS-REQ-001 lists upstream dependency TPM module AVL."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "VAL-REQ-001",
+    "dependency_type": "downstream",
+    "rationale": "BIOS-REQ-001 lists downstream dependency VAL-REQ-001."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "MFG-REQ-001",
+    "dependency_type": "downstream",
+    "rationale": "BIOS-REQ-001 lists downstream dependency MFG-REQ-001."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "Team:BMC",
+    "dependency_type": "impacted_team",
+    "rationale": "BMC is listed as an impacted team."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "Team:Validation",
+    "dependency_type": "impacted_team",
+    "rationale": "Validation is listed as an impacted team."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "Team:Program / Quality",
+    "dependency_type": "impacted_team",
+    "rationale": "Program / Quality is listed as an impacted team."
+  },
+  {
+    "source": "External:PSU firmware interface",
+    "target": "BMC-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "BMC-REQ-001 lists upstream dependency PSU firmware interface."
+  },
+  {
+    "source": "BMC-REQ-001",
+    "target": "External:VAL-REQ-002",
+    "dependency_type": "downstream",
+    "rationale": "BMC-REQ-001 lists downstream dependency VAL-REQ-002."
+  },
+  {
+    "source": "BMC-REQ-001",
+    "target": "Team:BIOS",
+    "dependency_type": "impacted_team",
+    "rationale": "BIOS is listed as an impacted team."
+  },
+  {
+    "source": "BMC-REQ-001",
+    "target": "Team:Validation",
+    "dependency_type": "impacted_team",
+    "rationale": "Validation is listed as an impacted team."
+  },
+  {
+    "source": "BMC-REQ-001",
+    "target": "Team:Application",
+    "dependency_type": "impacted_team",
+    "rationale": "Application is listed as an impacted team."
+  },
+  {
+    "source": "External:Thermal sensor map",
+    "target": "EC-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "EC-REQ-001 lists upstream dependency Thermal sensor map."
+  },
+  {
+    "source": "EC-REQ-001",
+    "target": "External:VAL-REQ-003",
+    "dependency_type": "downstream",
+    "rationale": "EC-REQ-001 lists downstream dependency VAL-REQ-003."
+  },
+  {
+    "source": "EC-REQ-001",
+    "target": "Team:BIOS",
+    "dependency_type": "impacted_team",
+    "rationale": "BIOS is listed as an impacted team."
+  },
+  {
+    "source": "EC-REQ-001",
+    "target": "Team:Validation",
+    "dependency_type": "impacted_team",
+    "rationale": "Validation is listed as an impacted team."
+  },
+  {
+    "source": "External:Device firmware release candidate",
+    "target": "OS-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "OS-REQ-001 lists upstream dependency Device firmware release candidate."
+  },
+  {
+    "source": "OS-REQ-001",
+    "target": "MFG-REQ-001",
+    "dependency_type": "downstream",
+    "rationale": "OS-REQ-001 lists downstream dependency MFG-REQ-001."
+  },
+  {
+    "source": "OS-REQ-001",
+    "target": "Team:BIOS",
+    "dependency_type": "impacted_team",
+    "rationale": "BIOS is listed as an impacted team."
+  },
+  {
+    "source": "OS-REQ-001",
+    "target": "Team:Validation",
+    "dependency_type": "impacted_team",
+    "rationale": "Validation is listed as an impacted team."
+  },
+  {
+    "source": "OS-REQ-001",
+    "target": "Team:Factory / Diagnostics",
+    "dependency_type": "impacted_team",
+    "rationale": "Factory / Diagnostics is listed as an impacted team."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "VAL-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "VAL-REQ-001 lists upstream dependency BIOS-REQ-001."
+  },
+  {
+    "source": "VAL-REQ-001",
+    "target": "External:Customer FC signoff",
+    "dependency_type": "downstream",
+    "rationale": "VAL-REQ-001 lists downstream dependency Customer FC signoff."
+  },
+  {
+    "source": "VAL-REQ-001",
+    "target": "Team:BIOS",
+    "dependency_type": "impacted_team",
+    "rationale": "BIOS is listed as an impacted team."
+  },
+  {
+    "source": "VAL-REQ-001",
+    "target": "Team:Program / Quality",
+    "dependency_type": "impacted_team",
+    "rationale": "Program / Quality is listed as an impacted team."
+  },
+  {
+    "source": "BIOS-REQ-001",
+    "target": "MFG-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "MFG-REQ-001 lists upstream dependency BIOS-REQ-001."
+  },
+  {
+    "source": "OS-REQ-001",
+    "target": "MFG-REQ-001",
+    "dependency_type": "upstream",
+    "rationale": "MFG-REQ-001 lists upstream dependency OS-REQ-001."
+  },
+  {
+    "source": "MFG-REQ-001",
+    "target": "External:Production line pilot",
+    "dependency_type": "downstream",
+    "rationale": "MFG-REQ-001 lists downstream dependency Production line pilot."
+  },
+  {
+    "source": "MFG-REQ-001",
+    "target": "Team:BIOS",
+    "dependency_type": "impacted_team",
+    "rationale": "BIOS is listed as an impacted team."
+  },
+  {
+    "source": "MFG-REQ-001",
+    "target": "Team:BMC",
+    "dependency_type": "impacted_team",
+    "rationale": "BMC is listed as an impacted team."
+  },
+  {
+    "source": "MFG-REQ-001",
+    "target": "Team:Driver / OS",
+    "dependency_type": "impacted_team",
+    "rationale": "Driver / OS is listed as an impacted team."
+  },
+  {
+    "source": "MFG-REQ-001",
+    "target": "Team:Validation",
+    "dependency_type": "impacted_team",
+    "rationale": "Validation is listed as an impacted team."
+  }
+]

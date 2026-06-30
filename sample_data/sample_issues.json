@@ -1,0 +1,54 @@
+[
+  {
+    "issue_id": "ISSUE-001",
+    "title": "TPM event log missing final separator event",
+    "severity": "SEV1",
+    "milestone": "DVT",
+    "owner_team": "BIOS",
+    "status": "Open",
+    "gating": true,
+    "machine_available": true,
+    "reproducible": true,
+    "linked_requirement_ids": ["BIOS-REQ-001", "VAL-REQ-001"],
+    "notes": "Blocks security validation signoff."
+  },
+  {
+    "issue_id": "ISSUE-002",
+    "title": "BMC Redfish power telemetry intermittently stale",
+    "severity": "SEV2",
+    "milestone": "DVT",
+    "owner_team": "BMC",
+    "status": "Open",
+    "gating": true,
+    "machine_available": false,
+    "reproducible": true,
+    "linked_requirement_ids": ["BMC-REQ-001"],
+    "notes": "Needs a reserved PSU stress system."
+  },
+  {
+    "issue_id": "ISSUE-003",
+    "title": "EC fan curve overshoots during AC cycle",
+    "severity": "SEV2",
+    "milestone": "EVT",
+    "owner_team": "EC",
+    "status": "Open",
+    "gating": false,
+    "machine_available": true,
+    "reproducible": false,
+    "linked_requirement_ids": ["EC-REQ-001"],
+    "notes": "Repro rate is low and thermal chamber time is limited."
+  },
+  {
+    "issue_id": "ISSUE-004",
+    "title": "Factory diagnostic NIC link check fails on one adapter",
+    "severity": "SEV3",
+    "milestone": "PVT",
+    "owner_team": "Factory / Diagnostics",
+    "status": "Resolved",
+    "gating": false,
+    "machine_available": true,
+    "reproducible": true,
+    "linked_requirement_ids": ["MFG-REQ-001"],
+    "notes": "Fixed in diagnostic package build 18."
+  }
+]

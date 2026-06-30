@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Issue",
+  "type": "object",
+  "required": ["issue_id", "title", "severity", "milestone", "owner_team", "status"],
+  "properties": {
+    "issue_id": { "type": "string" },
+    "title": { "type": "string" },
+    "severity": { "type": "string" },
+    "milestone": { "type": "string" },
+    "owner_team": { "type": "string" },
+    "status": { "type": "string" },
+    "gating": { "type": "boolean" },
+    "machine_available": { "type": "boolean" },
+    "reproducible": { "type": "boolean" },
+    "linked_requirement_ids": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" }
+  }
+}

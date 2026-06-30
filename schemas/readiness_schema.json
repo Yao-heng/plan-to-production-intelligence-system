@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReadinessReport",
+  "type": "object",
+  "required": [
+    "readiness_score",
+    "readiness_level",
+    "total_requirements",
+    "blocked_or_high_risk_requirements",
+    "open_gating_issues",
+    "open_sev1_issues",
+    "missing_dependencies"
+  ],
+  "properties": {
+    "readiness_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "readiness_level": { "type": "string", "enum": ["Red", "Yellow", "Green"] },
+    "total_requirements": { "type": "integer" },
+    "blocked_or_high_risk_requirements": { "type": "integer" },
+    "open_gating_issues": { "type": "integer" },
+    "open_sev1_issues": { "type": "integer" },
+    "missing_dependencies": { "type": "integer" },
+    "owner_risks": { "type": "array" },
+    "next_actions": { "type": "array" },
+    "metrics": { "type": "object" }
+  }
+}
