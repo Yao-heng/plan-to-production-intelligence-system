@@ -1,0 +1,175 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"title": "Readiness Schema",
+"description": "Readiness assessment output for FC, Pilot, Production, RFD, RTS, or Sustaining Handoff decision support.",
+"type": "object",
+"required": [
+"project_name",
+"milestone",
+"readiness_score",
+"overall_status",
+"generated_at",
+"summary"
+],
+"properties": {
+"project_name": {
+"type": "string",
+"description": "Project or platform name."
+},
+"milestone": {
+"type": "string",
+"description": "Milestone being assessed.",
+"enum": [
+"Requirement Complete",
+"Feature Complete",
+"Pilot Exit",
+"Production Readiness",
+"RFD",
+"RTS",
+"Sustaining Handoff"
+]
+},
+"readiness_score": {
+"type": "number",
+"description": "Readiness score from 0 to 100.",
+"minimum": 0,
+"maximum": 100
+},
+"overall_status": {
+"type": "string",
+"description": "Overall readiness status.",
+"enum": [
+"Ready",
+"Ready with Risks",
+"Not Ready",
+"Blocked",
+"Decision Required"
+]
+},
+"generated_at": {
+"type": "string",
+"description": "Report generation timestamp."
+},
+"summary": {
+"type": "string",
+"description": "Executive-level readiness summary."
+},
+"open_gating_issues": {
+"type": "array",
+"description": "Open gating issue IDs.",
+"items": {
+"type": "string"
+}
+},
+"open_sev1_issues": {
+"type": "array",
+"description": "Open Sev1 issue IDs.",
+"items": {
+"type": "string"
+}
+},
+"blocked_requirements": {
+"type": "array",
+"description": "Requirement IDs that are blocked.",
+"items": {
+"type": "string"
+}
+},
+"missing_dependencies": {
+"type": "array",
+"description": "Missing upstream dependencies.",
+"items": {
+"type": "string"
+}
+},
+"owner_risks": {
+"type": "array",
+"description": "Owner teams with unresolved risks.",
+"items": {
+"type": "object",
+"properties": {
+"owner_team": {
+"type": "string"
+},
+"risk": {
+"type": "string"
+},
+"recommended_action": {
+"type": "string"
+}
+}
+}
+},
+"schedule_risks": {
+"type": "array",
+"description": "Schedule-related risks.",
+"items": {
+"type": "object",
+"properties": {
+"risk": {
+"type": "string"
+},
+"impact": {
+"type": "string"
+},
+"recommended_action": {
+"type": "string"
+}
+}
+}
+},
+"quality_risks": {
+"type": "array",
+"description": "Quality-related risks.",
+"items": {
+"type": "object",
+"properties": {
+"risk": {
+"type": "string"
+},
+"impact": {
+"type": "string"
+},
+"recommended_action": {
+"type": "string"
+}
+}
+}
+},
+"production_decision_recommendation": {
+"type": "string",
+"description": "Recommendation for production decision, such as proceed, proceed with approved risks, hold, escalate, or require additional verification."
+},
+"human_approval_required": {
+"type": "boolean",
+"description": "Whether human approval is required before milestone exit."
+},
+"next_actions": {
+"type": "array",
+"description": "Recommended next actions.",
+"items": {
+"type": "object",
+"properties": {
+"action": {
+"type": "string"
+},
+"owner_team": {
+"type": "string"
+},
+"due_date": {
+"type": "string"
+},
+"priority": {
+"type": "string",
+"enum": [
+"Critical",
+"High",
+"Medium",
+"Low"
+]
+}
+}
+}
+}
+}
+}
