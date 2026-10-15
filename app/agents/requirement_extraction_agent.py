@@ -5,7 +5,6 @@ import re
 from app.agents.ownership_router import route_requirement
 from app.schemas.models import Requirement
 
-
 BLOCK_RE = re.compile(r"^##\s+(?P<id>[A-Z]+-REQ-\d+):\s+(?P<title>.+)$", re.MULTILINE)
 
 

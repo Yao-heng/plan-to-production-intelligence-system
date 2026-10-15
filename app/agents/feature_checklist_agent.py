@@ -4,7 +4,6 @@ from collections import defaultdict
 
 from app.schemas.models import Requirement
 
-
 CHECKLIST_TEAMS = [
     "BIOS",
     "BMC",

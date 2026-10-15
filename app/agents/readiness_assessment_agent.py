@@ -4,7 +4,6 @@ from collections import defaultdict
 
 from app.schemas.models import DependencyEdge, Issue, NextAction, OwnerRisk, ReadinessReport, Requirement
 
-
 HIGH_RISK_VALUES = {"high", "critical"}
 BLOCKED_VALUES = {"blocked", "at risk", "delayed"}
 

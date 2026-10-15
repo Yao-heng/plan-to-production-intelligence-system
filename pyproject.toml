@@ -20,6 +20,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0,<9",
+    "ruff>=0.4,<1",
 ]
 
 [tool.setuptools]
@@ -28,6 +29,14 @@ packages = ["app", "app.agents", "app.schemas", "app.services"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
-# Future cleanup (not yet enforced in CI):
-# [tool.ruff] and [tool.mypy] settings can be added here to gradually
-# converge type-annotation and docstring coverage across app/agents.
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+# app/main.py bootstraps sys.path before importing app.* so that both
+# `python -m app.main` and `python app/main.py` work; E402 is intentional there.
+"app/main.py" = ["E402"]

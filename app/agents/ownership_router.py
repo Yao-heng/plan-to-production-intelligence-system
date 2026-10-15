@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-
 KEYWORD_RULES: dict[str, list[str]] = {
     "BIOS": ["bios", "uefi", "boot", "secure boot", "tpm", "smbios", "acpi", "firmware"],
     "BMC": ["bmc", "redfish", "ipmi", "sel", "sensor", "telemetry"],
