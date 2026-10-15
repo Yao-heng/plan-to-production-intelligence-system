@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plan-to-production-intelligence-system"
+version = "0.1.0"
+description = "AI-driven platform delivery governance MVP: requirement extraction, ownership routing, dependency intelligence, issue triage, and production readiness assessment"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Tony Lee" }]
+dependencies = [
+    "pydantic>=2.7,<3",
+    "networkx>=3.2,<4",
+    "python-dotenv>=1.0,<2",
+    "markdown>=3.6,<4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9",
+]
+
+[tool.setuptools]
+packages = ["app", "app.agents", "app.schemas", "app.services"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# Future cleanup (not yet enforced in CI):
+# [tool.ruff] and [tool.mypy] settings can be added here to gradually
+# converge type-annotation and docstring coverage across app/agents.
