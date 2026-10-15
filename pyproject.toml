@@ -28,6 +28,9 @@ packages = ["app", "app.agents", "app.schemas", "app.services"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# Ensure repo root is importable so bare `pytest` works, not only
+# `python -m pytest` (which adds CWD to sys.path implicitly).
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 120
