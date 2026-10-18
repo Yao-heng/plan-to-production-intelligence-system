@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Run the full MVP workflow (reads sample_data/, writes 6 files to outputs/)
 python -m app.main
 
-# Run the test suite (7 tests)
+# Run the test suite (15 tests)
 python -m pytest
 
 # Lint
@@ -117,11 +117,12 @@ assets/screenshots/        Screenshots of the generated outputs
 ## Running Tests
 
 ```bash
-python -m pytest        # 7 tests: unit tests per agent + test_main_workflow.py (end-to-end)
+python -m pytest        # 15 tests: unit tests per agent + test_main_workflow.py (end-to-end)
 ruff check .            # lint (rules E/F/I/W, configured in pyproject.toml)
+mypy app                # type check (annotations required, configured in pyproject.toml)
 ```
 
-CI (GitHub Actions, [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs ruff, the full pytest suite, and an MVP workflow smoke test on every push and pull request.
+CI (GitHub Actions, [`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs ruff, mypy, the full pytest suite, and an MVP workflow smoke test on every push and pull request.
 
 ## Visual Demo
 

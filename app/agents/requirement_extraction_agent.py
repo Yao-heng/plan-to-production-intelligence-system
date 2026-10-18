@@ -49,12 +49,13 @@ def extract_requirements(markdown: str) -> list[Requirement]:
         end = matches[index + 1].start() if index + 1 < len(matches) else len(markdown)
         block = markdown[start:end].strip()
         raw_fields = _parse_fields(block)
+        impacted_teams = _split_list(raw_fields.get("Impacted Teams", ""))
         data: dict[str, object] = {
             "requirement_id": match.group("id"),
             "title": match.group("title").strip(),
             "description": raw_fields.get("Description", ""),
             "owner_team": raw_fields.get("Owner Team", "Program / Quality"),
-            "impacted_teams": _split_list(raw_fields.get("Impacted Teams", "")),
+            "impacted_teams": impacted_teams,
             "upstream_dependencies": _split_list(
                 raw_fields.get("Upstream Dependency", raw_fields.get("Upstream Dependencies", ""))
             ),
@@ -73,13 +74,15 @@ def extract_requirements(markdown: str) -> list[Requirement]:
                 str(data["requirement_id"]),
                 str(data["title"]),
                 str(data["description"]),
-                " ".join(data["impacted_teams"]),  # type: ignore[arg-type]
+                " ".join(impacted_teams),
             ]
         )
         decision = route_requirement(routing_text)
         data["owner_team"] = decision.owner_team
         data["confidence_score"] = decision.confidence_score
         data["routing_rationale"] = decision.rationale
-        requirements.append(Requirement(**data))
+        # model_validate on the assembled dict applies the same pydantic
+        # validation as Requirement(**data) while staying type-checkable.
+        requirements.append(Requirement.model_validate(data))
 
     return requirements

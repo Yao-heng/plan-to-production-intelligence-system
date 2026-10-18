@@ -44,7 +44,7 @@ def build_dependency_edges(requirements: list[Requirement]) -> list[DependencyEd
 
 
 def build_graph(requirements: list[Requirement], edges: list[DependencyEdge]) -> nx.MultiDiGraph:
-    graph = nx.MultiDiGraph()
+    graph: nx.MultiDiGraph[str] = nx.MultiDiGraph()
     for requirement in requirements:
         graph.add_node(requirement.requirement_id, owner_team=requirement.owner_team, milestone=requirement.milestone)
     for edge in edges:

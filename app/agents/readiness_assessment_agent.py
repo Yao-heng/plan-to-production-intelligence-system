@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from typing import Literal
 
 from app.schemas.models import DependencyEdge, Issue, NextAction, OwnerRisk, ReadinessReport, Requirement
 
@@ -37,7 +38,9 @@ def assess_readiness(
     score -= len(open_sev1) * 12
     score -= len(missing_dependencies) * 3
     readiness_score = max(0, min(100, score))
-    readiness_level = "Green" if readiness_score >= 85 else "Yellow" if readiness_score >= 65 else "Red"
+    readiness_level: Literal["Red", "Yellow", "Green"] = (
+        "Green" if readiness_score >= 85 else "Yellow" if readiness_score >= 65 else "Red"
+    )
 
     owner_risks = _build_owner_risks(requirements, open_gating, open_sev1)
     next_actions = _build_next_actions(blocked_or_high_risk, open_gating, open_sev1, missing_dependencies)
@@ -82,7 +85,9 @@ def _build_owner_risks(
     risks: list[OwnerRisk] = []
     for owner in owners:
         pressure = high_risk_count[owner] + gating_count[owner] + sev1_count[owner]
-        risk_level = "High" if pressure >= 2 else "Medium" if pressure == 1 else "Low"
+        risk_level: Literal["Low", "Medium", "High"] = (
+            "High" if pressure >= 2 else "Medium" if pressure == 1 else "Low"
+        )
         risks.append(
             OwnerRisk(
                 owner_team=owner,

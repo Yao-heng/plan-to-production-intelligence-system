@@ -21,10 +21,22 @@ dependencies = [
 dev = [
     "pytest>=8.0,<9",
     "ruff>=0.4,<1",
+    "mypy>=1.10",
+    "types-networkx",
 ]
 
 [tool.setuptools]
 packages = ["app", "app.agents", "app.schemas", "app.services"]
+
+[tool.mypy]
+python_version = "3.11"
+# Progressive strictness: every function must be annotated
+# (disallow_untyped_defs) and functions must not silently return Any.
+# Scope: `mypy app` (see CI). Tests are not type-checked yet.
+# networkx is covered by the types-networkx stubs (dev dependency).
+disallow_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
